@@ -1,0 +1,29 @@
+---
+- name: Allow Sample port
+  win_firewall_rule:
+    name: sample
+    localport: 8080
+    action: allow
+    direction: in
+    protocol: tcp
+    state: present
+
+- name: Allow Caddy port
+  win_firewall_rule:
+    name: caddy
+    action: allow
+    localport: 80
+    direction: in
+    protocol: tcp
+    state: present
+  when: caddy_installed.exists
+
+- name: Allow Caddy HTTPS
+  win_firewall_rule:
+    name: caddy-https
+    action: allow
+    localport: 443
+    direction: in
+    protocol: tcp
+    state: present
+  when: caddy_installed.exists

@@ -1,0 +1,13 @@
+---
+- name: Write Caddyfile
+  win_template:
+    src: ../templates/Caddyfile.j2
+    dest: C:\Users\{{ username }}\Downloads\caddy-cf\Caddyfile
+
+- name: Create caddy service
+  win_service:
+    name: caddy
+    path: '"C:\Users\{{ username }}\Downloads\caddy-cf\caddy.exe" run -c Caddyfile'
+    start_mode: auto
+    state: started
+  register: caddy_installed

@@ -1,0 +1,11 @@
+---
+- name: Ensure caddy path exists
+  win_file:
+    path: C:\Users\{{ username }}\Downloads\caddy-cf
+    state: directory
+
+- name: Download caddy executable
+  win_get_url:
+    dest: C:\Users\{{ username }}\Downloads\caddy-cf\caddy.exe
+    url: https://caddyserver.com/api/download?os=windows&arch=amd64&p=github.com%2Fcaddy-dns%2Fcloudflare
+    force: no

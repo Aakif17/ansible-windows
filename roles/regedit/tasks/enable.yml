@@ -1,0 +1,8 @@
+---
+- name: Enable last active click
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    type: dword
+    name: LastActiveClick
+    data: 00000001
+    state: present

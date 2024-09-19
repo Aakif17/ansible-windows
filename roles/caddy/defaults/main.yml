@@ -1,0 +1,23 @@
+---
+username: aakif
+
+packages:
+  - 7zip
+  - googlechrome
+  - vscode
+  - notepadplusplus
+  - powershell-core
+  - putty
+
+caddy_tls_providers:
+  - provider: cloudflare
+    challenge_type: dns
+    provider_api_token: "{{ cloudflare_api_token }}"
+    resolver_ip: 1.1.1.1
+
+caddy_endpoints:
+  - friendly_name: jf
+    fqdn: jf.aakif.me
+    tls_insecure: false
+    upstream: "192.168.1.8:8080"
+    tls_provider: cloudflare

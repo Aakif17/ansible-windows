@@ -1,0 +1,10 @@
+---
+- hosts: myhosts
+
+  vars_files:
+    - vars/secrets.yml
+
+  roles:
+    - role: caddy
+    - role: firewall
+    # - role: regedit

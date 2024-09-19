@@ -1,0 +1,5 @@
+---
+- name: restart caddy
+  win_service:
+    name: caddy
+    state: restarted
