@@ -1,0 +1,12 @@
+---
+- name: Ensure sample directory exists
+  win_file:
+    path: C:\Users\{{ username }}\Downloads\sample
+    state: directory
+
+- name: Create index.html
+  win_lineinfile:
+    path: C:\Users\{{ username }}\Downloads\sample\index.html
+    create: yes
+    line: hello
+  register: index_created

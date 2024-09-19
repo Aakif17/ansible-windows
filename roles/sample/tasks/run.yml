@@ -1,0 +1,7 @@
+---
+- name: Run Python command
+  win_shell: |
+    Start-Process "python" "-m http.server -b 192.168.1.8 8080" -WindowStyle Hidden
+  async: 1
+  poll: 0
+  register: sample_started
