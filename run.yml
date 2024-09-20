@@ -5,7 +5,7 @@
     - vars/secrets.yml
 
   roles:
+    - role: regedit
     - role: sample
     - role: caddy
     - role: firewall
-    # - role: regedit
