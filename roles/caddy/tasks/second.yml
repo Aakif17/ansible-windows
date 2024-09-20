@@ -10,4 +10,3 @@
     path: '"C:\Users\{{ username }}\Downloads\caddy-cf\caddy.exe" run -c Caddyfile'
     start_mode: auto
     state: started
-  register: caddy_installed

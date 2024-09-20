@@ -16,7 +16,6 @@
     direction: in
     protocol: tcp
     state: present
-  when: caddy_installed.exists
 
 - name: Allow Caddy HTTPS
   win_firewall_rule:
@@ -26,4 +25,3 @@
     direction: in
     protocol: tcp
     state: present
-  when: caddy_installed.exists
