@@ -1,7 +1,7 @@
 ---
 - name: Run Python command
   win_shell: |
-    Start-Process -NoNewWindow "python" "-m http.server -b 192.168.1.8 8080"
+    Start-Process "python" "-m http.server -b 192.168.1.8 8080" -WindowStyle Hidden
   args:
     chdir: C:\Users\{{ username }}\Downloads\sample
   register: sample_started
