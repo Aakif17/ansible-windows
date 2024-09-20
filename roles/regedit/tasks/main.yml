@@ -1,2 +1,3 @@
 ---
 - import_tasks: enable.yml
+- import_tasks: restart.yml

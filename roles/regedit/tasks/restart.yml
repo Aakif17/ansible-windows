@@ -1,0 +1,8 @@
+---
+- name: Kill explorer process
+  win_shell: |
+    Stop-Process -Name explorer -Force
+
+- name: Start explorer process
+  win_shell: |
+    Start-Process explorer.exe

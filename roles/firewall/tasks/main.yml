@@ -1,2 +1,2 @@
 ---
-- include_tasks: open.yml
+- import_tasks: open.yml
