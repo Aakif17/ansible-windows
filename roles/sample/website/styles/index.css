@@ -1,0 +1,12 @@
+.header {
+  background-color: grey;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.main-heading {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-size: 60px;
+}
