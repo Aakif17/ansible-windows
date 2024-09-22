@@ -1,6 +1,9 @@
 ---
-- name: Run Python command
+- name: Run HTTP Server if not running already
   win_shell: |
-    Start-Process "python" "-m http.server -b 192.168.1.8 8080" -WindowStyle Hidden
+    if (-not (Get-Process -Name "python" -ErrorAction SilentlyContinue)) {
+      Start-Process "python" "-m http.server -b 192.168.1.8 8080" -WindowStyle Hidden
+    }
   args:
     chdir: C:\Users\{{ username }}\Downloads\sample\website
+  changed_when: false
